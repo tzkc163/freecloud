@@ -144,7 +144,6 @@ CREATE TABLE usage_logs (
 
 #### 1. **API Key验证逻辑**
 ```javascript
-// 位置：workerA/cf_worker_gemini_v2-调试版不要修改.js
 async validateApiKey(apiKey, db) {
   // 只查询API Key的状态和限制信息
   const key = await db.first('SELECT * FROM keys WHERE key_id = ? AND status = "active"', [apiKey]);
